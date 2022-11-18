@@ -18,11 +18,11 @@ const DisplayInitialCSS = () => (css.textContent = body.style.background + ";");
 document.onload = DisplayInitialCSS();
 
 // Custom background generator
-const background = () => {
+function background() {
   body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
   // Display the CSS linear gradient property selected
   css.textContent = body.style.background + ";";
-};
+}
 
 color1.addEventListener("input", background);
 color2.addEventListener("input", background);
@@ -31,7 +31,7 @@ color2.addEventListener("input", background);
 const randomBtn = document.getElementById("random");
 const arrayOfColorFunctions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
 
-const randomColor = () => {
+function randomColor() {
   let randomColorString2 = "#";
   let randomColorString1 = "#";
   for (let x = 0; x < 6; x++) {
@@ -45,9 +45,9 @@ const randomColor = () => {
     randomColorString2 += value;
   }
   randomBackground(randomColorString1, randomColorString2);
-};
+}
 
-const randomBackground = (random1, random2) => {
+function randomBackground(random1, random2) {
   body.style.background = "linear-gradient(to right, " + random1 + ", " + random2 + ")";
 
   // Set input type color value
@@ -56,6 +56,6 @@ const randomBackground = (random1, random2) => {
 
   // Display the CSS linear gradient property selected
   css.textContent = body.style.background + ";";
-};
+}
 
 randomBtn.addEventListener("click", randomColor);
